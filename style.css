@@ -1,0 +1,31 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+header {
+  grid-column: 1 / -1;
+  border: 1px solid black;
+}
+aside {
+  border: 1px solid black;
+  grid-row: 2 / 4;
+}
+section {
+  border: 1px solid black;
+  grid-column: 2 / -1;
+  height: 500px;
+}
+.widget1 {
+  border: 1px solid black;
+  grid-column: 2 / 3;
+}
+.widget2 {
+  border: 1px solid black;
+  grid-column: 3 / 4;
+}
+footer {
+  grid-column: 1 / -1;
+  border: 1px solid black;
+  height: 100px;
+}
