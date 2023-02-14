@@ -1,33 +1,45 @@
+/* en tamano pequeno =
+header 
+seccion (images on on top of other)
+publi 
+widget x 2 in one 
+footer */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   margin: 30px;
+  grid-template-columns: 1fr 1fr;
 }
+
 header {
-  grid-column: 1 / -1;
   border: 1px solid black;
+  grid-column: 1 / -1;
+}
+
+section {
+  border: 1px solid black;
+  grid-column: 1 / -1;
 }
 aside {
   border: 1px solid black;
-  grid-row: 2 / 4;
+  grid-column: 1 / -1;
 }
-section {
-  border: 1px solid black;
-  grid-column: 2 / -1;
-}
+
 .widget1 {
   border: 1px solid black;
-  grid-column: 2 / 3;
 }
 .widget2 {
   border: 1px solid black;
-  grid-column: 3 / 4;
 }
 footer {
-  grid-column: 1 / -1;
   border: 1px solid black;
-  height: 100px;
+  grid-column: 1 / -1;
 }
 
 h2 {
@@ -39,12 +51,89 @@ article {
 
 .image-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  gap: 20px;
   margin: 20px;
 }
 
 .image-container div {
   border: 1px solid black;
   height: 50px;
+}
+
+/*============================
+768 px
+===============================*/
+/*medium size = header 
+seccion (images two by two) 
+publi one half,
+then widget in one quarter,
+then other widget in other quarter 
+footer*/
+@media screen and (min-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  aside {
+    grid-column: 1 / 3;
+  }
+}
+
+/*============================
+992 px
+===============================
+
+medium large =(how it is now)
+header 
+publi down one side = alongside it seccion and two widgets below seccion 
+footer */
+@media screen and (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  aside {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  section {
+    grid-column: 2 / -1;
+  }
+  .widget1 {
+    grid-column: 2 / 3;
+  }
+  .widget2 {
+    grid-column: 3 / 4;
+  }
+  footer {
+    grid-column: 1 / -1;
+    height: 100px;
+  }
+
+  .image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/*============================
+1200px
+===============================*/
+/*
+largest:
+same but publi on the right 
+*/
+@media screen and (min-width: 1200px) {
+  aside {
+    grid-column: 3 / 4;
+  }
+  section {
+    grid-column: 1 / 3;
+  }
+  .widget1 {
+    grid-column: 1 / 2;
+  }
+  .widget2 {
+    grid-column: 2 / 3;
+  }
 }
